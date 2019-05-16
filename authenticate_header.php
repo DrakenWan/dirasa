@@ -3,7 +3,8 @@
 	//db connect 
 	$host="localhost";
 	$dbuser="root";
-	$conn= new mysqli($host,$dbuser,"KKK1998*");
+	$password="";
+	$conn= new mysqli($host,$dbuser,$password);
 	mysqli_select_db($conn,"dirasa");
 
 	if(mysqli_connect_errno())
