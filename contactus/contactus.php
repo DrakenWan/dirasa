@@ -28,7 +28,23 @@
 
 
 <style>
+.logout_button_on_profile
+{
+	background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+	border: 2px solid #f44336;
+	
+}
 
+.logout_button_on_profile:hover
+{
+	background-color:#ce382d;
+	border: 2px solid #ce382d;
+}
 /**** CONTACT FORM CODE ****/
 
 /*//////////////////////////////////////////////////////////////////
@@ -306,9 +322,16 @@ ul, li {
 	 </div>
 	 
     </div>
-    <div class="chodal-footer">
-	  <div id="chodal_logout"><a class="modal-links" href="./redirect.php">Logout</a></div>
+    <!-- logout button -->
+    <div class="chodal-footer"> 
+	  <form action="../redirect.php" method="post" id="logout">
+	   <div id="chodal_logout">
+	    <input type="hidden" name="redirect_link" id="redirect_link" value="./contactus/contactus.php">
+		<input class="logout_button_on_profile" type="submit" value="Logout">
+	   </div>
+	  </form>
     </div>
+	<!-- logout button ends-->
   </div>
 
 </div>

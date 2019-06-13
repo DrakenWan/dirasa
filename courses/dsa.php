@@ -398,7 +398,7 @@ input[type=file]
     <div class="chodal-footer"> 
 	  <form action="../redirect.php" method="post" id="logout">
 	   <div id="chodal_logout">
-	    <input type="hidden" name="redirect_link" id="redirect_link" value="./courses/cryptography.php">
+	    <input type="hidden" name="redirect_link" id="redirect_link" value="./courses/dsa.php">
 		<input class="logout_button_on_profile" type="submit" value="Logout">
 	   </div>
 	  </form>
@@ -410,22 +410,21 @@ input[type=file]
 
 <!-- modal ends here -->
 
-<h1> Cryptography: An Introduction </h1>
+<h1>Data Structure and Algorithm</h1>
 <div class="container">
  
  <div class="description">
-	<p> Cryptography is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</p>
-	<p> More generally, cryptography is about constructing and analyzing protocols that prevent third parties or the public from reading private messages; various aspects in information security such as data confidentiality, data integrity, authentication, and non-repudiation
-	are central to modern cryptography.
-	</p>
+	<p>In computer science, a data structure is a data organization, management and storage format that enables efficient access and modification.[1][2][3] More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.</p>
  </div>
- 
+<!-- Course description body ends here -->
+
  <hr/>
  
  <div class="details">
 	<?php
-		$courseid = "CS1001";
+		
 		include "../authenticate_header.php";
+		$courseid = "CS1002";
 		$query = "SELECT * from course where course_id='$courseid'";
 		$query_result = mysqli_query($conn,$query) or die("Error in query or accessing elements.");
 		if(mysqli_num_rows($query_result)>0)
@@ -453,7 +452,7 @@ input[type=file]
  { 
 	 $uname = $_SESSION['username'];
 	 //echo $uname;
-	 $query1 = "select * from course_student where student_uname='$uname' and course_id='$courseid'";
+	 $query1 = "select * from course_student where student_uname='$uname' and course_id='$courseid'"; 
 	 $result_query1 = mysqli_query($conn, $query1) or die("query failed");
 	if(!(mysqli_num_rows($result_query1)>0))
 	{
@@ -481,7 +480,7 @@ input[type=file]
 	//SCRIPT FOR FILE UPLOADING MODULE
 	
 	$uploaded_files = "";
-	Settings::$uploadFolder .= "/cryptography";
+	Settings::$uploadFolder .= "/dsa";
 	$message="";
    //Has the user uploaded something?
  
@@ -493,7 +492,7 @@ input[type=file]
 	$target_path = Settings::$uploadFolder;
 	$target_path = $target_path . "/".time() . '♀' . $_SESSION["username"]. '♀' . basename( $_FILES['file']['name']);
  
-	
+
 	//Try to move the uploaded file into the designated folder
         if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
             $message = "The file ".  basename( $_FILES['file']['name']). 
@@ -519,7 +518,7 @@ while (($file = readdir($dh)) !== false)
  if($file != '.' && $file != '..')
  {
 	$filename = Settings::$uploadFolder . $file;
-	$filename = "./uploads/cryptography/".$file;
+	$filename = "./uploads/dsa/".$file;
 	$parts = explode("♀", $file);
 	$size = formatBytes(filesize($filename));
 	$added = date("m/d/Y", $parts[0]);
@@ -540,15 +539,14 @@ if(strlen($uploaded_files) == 0)
 //File type
 function getFileType($extension)
 {
-    $images = array('jpg', 'gif', 'png', 'bmp');
+    $images = array('jpg', 'gif', 'png', 'bmp', 'JPG', 'JPEG');
     $docs   = array('txt', 'rtf', 'doc', 'pdf');
     $apps   = array('zip', 'rar', 'exe', 'mp3');
-     
+   
     if(in_array($extension, $images)) return "Images";
     if(in_array($extension, $docs)) return "Documents";
     if(in_array($extension, $apps)) return "Applications";
 	else return "Others";
-    return "";
 }
 
 //Turning into readable format for bytes
@@ -589,7 +587,7 @@ function formatBytes($bytes, $precision = 2) {
 		<fieldset style="border:1px solid grey; padding: 20px 20px 20px 20px">
         <form method="POST" action="<?php echo "$script_name";?>" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="100000000000000000000000000000000" readonly/>
-		<input type="hidden" name="subject" value="cryptography" readonly/>
+		<input type="hidden" name="subject" value="dsa" readonly/>
         <input type="hidden" name="randcheck" value="<?php echo $rand; ?>" readonly/>
 		
 		<p><label for="file">Select file</label><br />
@@ -601,9 +599,7 @@ function formatBytes($bytes, $precision = 2) {
 	</div>
 	
 <!-- FILE UPLOADING MODULE DESIGN ENDS HERE -->
-<style>
 
-</style>
 <!-- FILES UPLOADED BY USER DISPLAYED HERE -->
 	<div id="listoffiles">
 		<h1> Uploaded Files </h1>

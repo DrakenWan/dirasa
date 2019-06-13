@@ -2,8 +2,9 @@
 
 <?php
 session_start();
+$link = $_POST["redirect_link"];
 if(session_destroy()){
-header("Location:welcome.php");
+header("Location:$link");
 }
 ?>
 

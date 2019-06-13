@@ -281,7 +281,7 @@ ul, li {
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-	  <a class="navbar-brand" href="<?php echo $script_name; ?>">
+	  <a class="navbar-brand" href="./welcome.php">
 		<img style="height: 100px; margin-top: -10px;" src="images/logo2pointo.png"/>
 	  </a>
     </div>
@@ -383,7 +383,7 @@ ul, li {
   
   <a href="./courses/codesign.php">
   <div class="w3-card-4" style="width:20%; display:inline-block; margin: 20px 20px 0px 20px;">
-    <img src="images/courses/codesign.png" alt="codesign" style="width:100%">
+    <img src="images/courses/codesign.png" alt="codesign" style="width:100%;height:295px;">
     <div class="w3-container w3-center">
       <p id="coursename">Software Hardware Co-design</p>
     </div>
@@ -397,12 +397,13 @@ ul, li {
     </div>
   </div></a>
   
+  <a href="./courses/dsa.php">
   <div class="w3-card-4" style="width:20%; display:inline-block; margin: 20px 20px 0px 20px;">
     <img src="images/courses/img_snowtops.jpg" alt="Norway" style="width:100%">
     <div class="w3-container w3-center">
-      <p id="coursename" >Basic Linear Algebra</p>
+      <p id="coursename" >Data Structure and Algorithm</p>
     </div>
-  </div>
+  </div></a>
   
   <div class="w3-card-4" style="width:20%; display:inline-block; margin: 20px 20px 0px 20px;">
     <img src="images/courses/img_snowtops.jpg" alt="Norway" style="width:100%">

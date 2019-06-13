@@ -16,7 +16,7 @@
 $string_eng = "<h1>Privacy Policy</h1>
 
 
-<p>Effective date: October 27, 2018</p>
+<p>Effective date: January 28, 2019</p>
 
 
 <p>Dirasa (\"us\", \"we\", or \"our\") operates the http://www.dirasa.com website (the \"Service\").</p>
